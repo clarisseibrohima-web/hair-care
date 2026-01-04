@@ -1,0 +1,38 @@
+input, select, textarea {
+  width: 100%;
+  margin: 0.4em 0;
+  padding: 0.6em;
+  border-radius: 12px;
+  border: none;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  width: 100%;
+  padding: 0.7em;
+  border-radius: 12px;
+  font-weight: bold;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  background: var(--bg-nav);
+  border-top: 1px solid var(--border-color);
+}
+

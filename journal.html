@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal capillaire</title>
+   <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="journal.css">
+</head>
+<body>
+
+<header>
+ <h1 class="rubrique-titre">
+   📗🍃 Journal capillaire</h1>
+
+</header>
+
+<section class="carte">
+  <h3>📝 Journal du jour</h3>
+  <select id="etatCheveux">
+    <option value="">État des cheveux</option>
+    <option>Hydratés</option>
+    <option>Secs</option>
+    <option>Cassants</option>
+    <option>Définis</option>
+  </select>
+
+ <input id="produitsJournal" type="text" placeholder="Produits utilisés (optionnel)">
+  <textarea id="noteJournal" placeholder="Notes / ressentis"></textarea>
+
+  
+  <input type="file" id="photoInput" accept="image/jpeg, image/png" multiple>
+
+<div class="journal-actions">
+ <button id="btnAdd">➕ Ajouter</button>
+<button id="initJournal" style="background:#ff5c5c;">🗑️ Initialiser le journal</button>
+    <div id="listeJournal"></div>
+  <div id="journalList"></div>
+</section>
+  
+ <nav class="bottom-nav">
+  <a href="conseils.html"><span>💇🏾‍♀️</span></a>
+  <a href="journal.html"><span>📗🍃</span></a>
+  <a href="index.html"><span>🏝️</span></a>
+  <a href="routine.html"><span>✨🧴</span></a>
+  <a href="stats.html">📊</a>
+  <a href="settings.html"><span>🥥</span></a>
+</nav>
+
+<script src="https://unpkg.com/heic2any/dist/heic2any.min.js"></script>
+<script src="js/journal.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

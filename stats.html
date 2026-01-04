@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statistiques Capillaires</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/stats.css">
+
+  <!-- Chart.js pour graphiques -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+<h1 class="rubrique-titre">📊 Statistiques</h1>
+</header>
+
+<section class="carte-routine" id="statsSection">
+  
+
+  <!-- Statistiques principales -->
+  <div class="stat-item">
+    <span>💧 Hydratation :</span>
+    <span id="statHydratation">0%</span>
+  </div>
+
+  <div class="stat-item">
+    <span>🧴 Soins réalisés :</span>
+    <span id="statSoins">0/0</span>
+  </div>
+
+  <div class="stat-item">
+    <span>📆 Semaines complètes :</span>
+    <span id="statSemaines">0/0</span>
+  </div>
+
+  <!-- Barre de progression -->
+  <div class="progress-bar-bg">
+    <div id="progressionBar" class="progress-bar-fill"></div>
+  </div>
+  <div id="progressionText"></div>
+</section>
+  
+<!-- NAVIGATION BASSE -->
+<nav class="bottom-nav">
+   <a href="conseils.html"><span>💇🏾‍♀️</span></a>
+  <a href="journal.html"><span>📗🍃</span></a>
+  <a href="index.html"><span>🏝️</span></a>
+  <a href="routine.html"><span>✨🧴</span></a>
+  <a href="stats.html">📊</a>
+  <a href="settings.html"><span>🥥</span></a>
+</nav>
+
+  <script src="js/theme.js"></script>  
+<script src="js/stats.js"></script>
+  
+</body>
+</html>

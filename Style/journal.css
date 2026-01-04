@@ -1,0 +1,166 @@
+/* Base & cartes */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  padding-bottom: 90px;
+}
+
+.carte {
+  background: var(--bg-card);
+  color: var(--text-card);
+  border-radius: var(--border-radius);
+  padding: 1em;
+  width: 90%;
+  max-width: 250px;
+  margin: 0.8em auto;
+  box-shadow: var(--shadow);
+}
+
+input, select, textarea, button {
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 0.65em;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.95em;
+  border: 1px solid #ddd;
+}
+
+textarea { resize: vertical; }
+
+
+
+button:hover {
+  transform: scale(1.04);
+  opacity: 0.95;
+}
+
+/* Journal */
+#listeJournal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-top: 1em;
+}
+
+.journal-card {
+  background: #f9fbf8;
+  border-radius: 14px;
+  padding: 0.8em;
+  font-size: 0.9em;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.journal-card strong {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.3em;
+}
+
+.journal-card .btn-group {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  gap: 4px;
+}
+
+.journal-card .btn-group button {
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Photos intégrées à une note */
+.journal-card .photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4em;
+  margin-top: 0.5em;
+}
+
+.journal-card .photo-item {
+  position: relative;
+  text-align: center;
+}
+
+.journal-card .photo-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.journal-card .photo-item .photo-date {
+  font-size: 0.65em;
+  color: #555;
+  margin-top: 2px;
+}
+
+.journal-card .photo-item button {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #7c6cff;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  border-radius: 50%;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button {
+  width: 100%;
+  padding: 0.7em;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Bouton initialiser (toujours rouge) */
+.btn-init {
+  background: #ff5c5c !important;
+  color: white !important;
+}
+/* Thème clair */
+body.clair {
+  --bg-header: #e6ccff;
+  --text-header: #4b0082;
+}
+
+/* Thème jungle */
+body.jungle {
+  --bg-header: #4caf50;
+  --text-header: #ffffff;
+}
+
+/* Thème girly violet */
+body.girlyViolet {
+  --bg-header: #b266ff;
+  --text-header: #ffffff;
+}
+
+/* Thème coucher de soleil */
+body.coucherSoleil {
+  --bg-header: #ff9966;
+  --text-header: #ffffff;
+}

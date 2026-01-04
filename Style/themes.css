@@ -1,0 +1,63 @@
+/* Thème Clair */
+.clair {
+  --bg-body: #ffffff;
+  --bg-card: #f9f9f9;
+  --bg-header: #f1f1f1;
+  --bg-nav: rgba(255,255,255,0.9);
+
+  --text-main: #333;
+  --text-card: #333;
+  --text-header: #333;
+
+  --btn-bg: #e6e6e6;
+  --btn-text: #333;
+
+  --accent: #b8c1ec;
+  --accent-soft: rgba(184,193,236,0.4);
+
+  --icon-color: #555;
+  --border-color: #ddd;
+}
+
+/* Thème Jungle */
+.jungle {
+  --bg-body: #e6fff2;
+  --bg-card: #ccffde;
+  --bg-header: #b3ffcc;
+  --bg-nav: rgba(0, 128, 64, 0.8);
+
+  --text-main: #1a3d2d;
+  --text-card: #1a3d2d;
+  --text-header: #1a3d2d;
+
+  --btn-bg: #33cc99;
+  --btn-text: #fff;
+
+  --accent: #33cc99;
+  --accent-soft: rgba(51,204,153,0.3);
+
+  --icon-color: #1a3d2d;
+  --border-color: #1a3d2d;
+}
+
+/* Thème Girly Violet */
+.girlyViolet {
+  --bg-body: #f9f0ff;
+  --bg-card: #f2e6ff;
+  --bg-header: #e6ccff;
+  --bg-nav: rgba(153, 51, 204, 0.8);
+
+  --text-main: #4b0082;
+  --text-card: #4b0082;
+  --text-header: #4b0082;
+
+  --btn-bg: #b266ff;
+  --btn-text: #fff;
+
+  --accent: #b266ff;
+  --accent-soft: rgba(178,102,255,0.3);
+
+  --icon-color: #4b0082;
+  --border-color: #4b0082;
+}
+
