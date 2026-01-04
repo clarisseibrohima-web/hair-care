@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routine Capillaire</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/st.css">
+</head>
+<body>
+
+<header>
+  <h1 class="rubrique-titre"> Routine Capillaire✨🧴
+</header>
+
+<!-- ===== INTRO ===== -->
+<section class="carte">
+  <h3>🗓️ Suivi de ta routine</h3>
+  <p>
+    Coche tes soins chaque semaine et observe ta régularité 🌱  
+    Une semaine se débloque quand la précédente est complétée.
+  </p>
+</section>
+
+<!-- ===== SEMAINE 1 ===== -->
+<section class="carte carte-routine">
+  <h3>✨ Routine capillaire</h3>
+
+  <div id="routineContainer">
+    <div class="semaine">
+      <label class="soin">
+        <input type="checkbox" name="soin" value="Shampooing">
+        <span>🧴 Shampooing</span>
+      </label>
+      <label class="soin">
+        <input type="checkbox" name="soin" value="Après-shampooing">
+        <span>💆‍♀️ Après-shampooing</span>
+      </label>
+      <label class="soin">
+        <input type="checkbox" name="soin" value="Masque">
+        <span>🛁 Masque</span>
+      </label>
+      <label class="soin">
+        <input type="checkbox" name="soin" value="Hydratation">
+        <span>💧 Hydratation</span>
+      </label>
+      <label class="soin">
+        <input type="checkbox" name="soin" value="Huile/Scalp">
+        <span>🥥 Huile / Scalp</span>
+      </label>
+    </div>
+  </div>
+
+  <button onclick="initialiserRoutine()" style="background:#ff5c5c;">Initialiser la semaine</button>
+</section>
+
+<!-- ===== NAVIGATION BASSE ===== -->
+<nav class="bottom-nav">
+  
+  <a href="conseils.html"><span>💇🏾‍♀️</span></a>
+  <a href="journal.html"><span>📗🍃</span></a>
+  <a href="index.html"><span>🏝️</span></a>
+  <a href="routine.html"><span>✨🧴</span></a>
+  <a href="stats.html">📊</a>
+  <a href="settings.html"><span>🥥</span></a>
+</nav>
+
+<!-- ===== SCRIPTS JS ===== -->
+<script src="js/theme.js"></script>
+<script src="js/routine.js"></script>
+
+</body>
+</html>

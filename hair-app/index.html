@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Capillaire</title>
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://unpkg.com/lucide/dist/lucide.min.js"></script>
+  <script src="js/theme.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1 class="rubrique-titre">
+   🏝️ Dashboard</h1>
+</header>
+
+ <!-- ================= Dashboard Icons ================= -->
+<section id="dashboard" class="carte">
+  <div class="dashboard-grid">
+    <a href="conseils.html" class="dashboard-icon">💇🏾‍♀️<span>Conseils</span></a>
+    <a href="routine.html" class="dashboard-icon">✨🧴<span>Routine</span></a>
+    <a href="journal.html" class="dashboard-icon">📗<span>Journal</span></a>
+    <a href="stats.html" class="dashboard-icon">📈<span>Stats</span></a>
+    <a href="settings.html" class="dashboard-icon">⚙️<span>Paramètres</span></a>
+  </div>
+</section>
+  
+<!-- ================= Progression Routine ================= -->
+<section class="carte">
+  <h3>📊 Progression Routine</h3>
+  <div class="progress-bar-bg">
+    <div class="progress-bar-fill" id="progressionBar"></div>
+  </div>
+  <p id="progressionText"></p>
+</section>
+
+
+
+ <!-- ================= Citation Motivante ================= -->
+<div id="citation-box" class="carte">
+  <p id="citation"></p>
+</div>
+  
+<!-- ================= Mood Capillaire ================= -->
+<section id="moodSection" class="carte">
+  <h3>🌺 Mood capillaire du jour</h3>
+  <div class="mood-options">
+    <button data-mood="🥰">🥰</button>
+    <button data-mood="😊">😊</button>
+    <button data-mood="😐">😐</button>
+    <button data-mood="😩">😩</button>
+    <button data-mood="😭">😭</button>
+  </div>
+  <h4>📅 Historique</h4>
+  <div id="moodHistorique"></div>
+  <p id="moodResult"></p>
+</section>
+
+
+<!-- ================= Bottom Nav ================= -->
+<nav class="bottom-nav">
+  <a href="conseils.html"><span>💇🏾‍♀️</span></a>
+  <a href="journal.html"><span>📗🍃</span></a>
+  <a href="routine.html"><span>✨🧴</span></a>
+  <a href="stats.html"><span>📊</span></a>
+  <a href="settings.html"><span>🥥</span></a>
+</nav>
+
+<script>
+  // ================= Citations motivantes =================
+  const citations = {
+    debut: ["🌱 Chaque petit geste compte.", "💧 Le soin commence aujourd’hui.", "🌊 La constance crée la magie."],
+    milieu: ["✨ Tu es sur la bonne voie.", "🌸 Continue, tes cheveux ressentent l’amour.", "💙 La régularité est ton super pouvoir."],
+    avance: ["🔥 Tu peux être fière de toi.", "🌺 Les résultats arrivent.", "🪷 La patience paie toujours."],
+    presque: ["🏝️ Tu touches au but.", "💫 Tes efforts parlent pour toi.", "🌞 Encore un pas."],
+    fini: ["🏆 Objectif accompli !", "✨ Tu l’as fait.", "🌈 Tes cheveux te remercient."]
+  };
+
+  // ================= Mood Capillaire =================
+  const moodResult = document.getElementById("moodResult");
+  const moodHistorique = document.getElementById("moodHistorique");
+  const moodButtons = document.querySelectorAll(".mood-options button");
+  let moods = JSON.parse(localStorage.getItem("moods")) || [];
+
+  function renderMoodHistorique() {
+    moodHistorique.innerHTML = "";
+    moods.slice().reverse().forEach(m => {
+      const div = document.createElement("div");
+      div.className = "mood-card";
+      div.innerHTML = `<span>${m.date}</span> <span style="font-size:1.2em">${m.mood}</span>`;
+      moodHistorique.appendChild(div);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const today = new Date().toLocaleDateString("fr-FR");
+    const savedMood = moods.find(m => m.date === today);
+    if (savedMood) moodResult.textContent = "Aujourd’hui : " + savedMood.mood;
+    renderMoodHistorique();
+  });
+
+  moodButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const today = new Date().toLocaleDateString("fr-FR");
+      moods = moods.filter(m => m.date !== today);
+      moods.push({ date: today, mood: btn.dataset.mood });
+      localStorage.setItem("moods", JSON.stringify(moods));
+      moodResult.textContent = "Aujourd’hui : " + btn.dataset.mood;
+      renderMoodHistorique();
+    });
+  });
+
+  // ================= Progression Routine =================
+  function updateProgression() {
+    const routineData = JSON.parse(localStorage.getItem("routineData")) || [];
+    const total = routineData.length;
+    const completees = routineData.filter(s => s.completee).length;
+    const pourcentage = total === 0 ? 0 : Math.round((completees / total) * 100);
+
+    const barre = document.getElementById("progressionBar");
+    const texte = document.getElementById("progressionText");
+
+    if (barre) barre.style.width = pourcentage + "%";
+    if (texte) texte.textContent = `Progression : ${pourcentage}% (${completees}/${total})`;
+
+    // Citation selon progression
+    let liste;
+    if (pourcentage < 26) liste = citations.debut;
+    else if (pourcentage < 51) liste = citations.milieu;
+    else if (pourcentage < 76) liste = citations.avance;
+    else if (pourcentage < 100) liste = citations.presque;
+    else liste = citations.fini;
+
+    const citationBox = document.getElementById("citation");
+    citationBox.textContent = liste[Math.floor(Math.random() * liste.length)];
+  }
+
+  document.addEventListener("DOMContentLoaded", updateProgression);
+</script>
+
+</body>
+</html>

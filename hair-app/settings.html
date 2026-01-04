@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres</title>
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://unpkg.com/lucide/dist/lucide.min.js"></script>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#b8c1ec">
+</head>
+<body>
+
+<header>
+  <h1 class="rubrique-titre">Paramètres</h1>
+</header>
+<!-- ===== THÈME ===== -->
+<section class="carte">
+  <h3>🎨 Thème</h3>
+  <select id="choixTheme">
+  <option value="clair">🌤 Clair</option>
+  <option value="jungle">🌿 Jungle</option>
+  <option value="girlyViolet">💜 Girly Violet</option>
+  <option value="coucherSoleil">🌅 Coucher de soleil</option>
+</select>
+
+</section>
+
+<!-- ===== NOTIFICATIONS ===== -->
+<section class="carte">
+  <h3>🔔 Notifications</h3>
+  <label>
+    <input type="checkbox" id="notifToggle">
+    Activer les notifications
+  </label>
+</section>
+
+<!-- ===== RAPPELS DE SOINS ===== -->
+<section class="carte">
+  <h3>⏰ Rappels de soins</h3>
+  <input type="text" id="soinRappel" placeholder="Nom du soin">
+  <input type="time" id="heureRappel">
+
+  <div id="joursSemaine">
+    <label><input type="checkbox" value="Lundi"> Lundi</label>
+    <label><input type="checkbox" value="Mardi"> Mardi</label>
+    <label><input type="checkbox" value="Mercredi"> Mercredi</label>
+    <label><input type="checkbox" value="Jeudi"> Jeudi</label>
+    <label><input type="checkbox" value="Vendredi"> Vendredi</label>
+    <label><input type="checkbox" value="Samedi"> Samedi</label>
+    <label><input type="checkbox" value="Dimanche"> Dimanche</label>
+  </div>
+
+  <button id="btnAjouterRappel">➕ Ajouter un rappel</button>
+  <div id="listeRappels"></div>
+</section>
+
+<!-- ===== NAVIGATION BASSE ===== -->
+<nav class="bottom-nav">
+    <a href="conseils.html"><span>💇🏾‍♀️</span></a>
+  <a href="journal.html"><span>📗🍃</span></a>
+  <a href="index.html"><span>🏝️</span></a>
+  <a href="routine.html"><span>✨🧴</span></a>
+  <a href="stats.html">📊</a>
+  <a href="settings.html"><span>🥥</span></a>
+</nav>
+
+<script>
+  lucide.replace();
+</script>
+<script src="js/settings.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>

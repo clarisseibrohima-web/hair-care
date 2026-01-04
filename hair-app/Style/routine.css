@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
+/* =========================
+   VARIABLES PAR THÈME
+========================= */
+
+/* Thème Clair */
+.clair {
+  --bg-body: #ffffff;
+  --bg-card: #f9f9f9;
+  --bg-header: #f1f1f1;
+  --bg-nav: rgba(255,255,255,0.9);
+
+  --text-main: #333;
+  --text-card: #333;
+  --text-header: #333;
+
+  --btn-bg: #e6e6e6;
+  --btn-text: #333;
+
+  --accent: #b8c1ec;
+  --accent-soft: rgba(184,193,236,0.4);
+
+  --icon-color: #555;
+  --border-color: #ddd;
+
+  /* Jour actif */
+  --jour-actif-bg: #555555;
+  --jour-actif-text: #ffffff;
+}
+
+/* Thème Jungle */
+.jungle {
+  --bg-body: #e6fff2;
+  --bg-card: #ccffde;
+  --bg-header: #b3ffcc;
+  --bg-nav: rgba(0, 128, 64, 0.8);
+
+  --text-main: #1a3d2d;
+  --text-card: #1a3d2d;
+  --text-header: #1a3d2d;
+
+  --btn-bg: #33cc99;
+  --btn-text: #fff;
+
+  --accent: #33cc99;
+  --accent-soft: rgba(51,204,153,0.3);
+
+  --icon-color: #1a3d2d;
+  --border-color: #1a3d2d;
+
+  --jour-actif-bg: #006633;
+  --jour-actif-text: #ffffff;
+}
+
+/* Thème Girly Violet */
+.girlyViolet {
+  --bg-body: #f9f0ff;
+  --bg-card: #f2e6ff;
+  --bg-header: #e6ccff;
+  --bg-nav: rgba(153, 51, 204, 0.8);
+
+  --text-main: #4b0082;
+  --text-card: #4b0082;
+  --text-header: #4b0082;
+
+  --btn-bg: #b266ff;
+  --btn-text: #fff;
+
+  --accent: #b266ff;
+  --accent-soft: rgba(178,102,255,0.3);
+
+  --icon-color: #4b0082;
+  --border-color: #4b0082;
+
+  --jour-actif-bg: #4b0082;
+  --jour-actif-text: #ffffff;
+}
+
+/* =========================
+   VARIABLES GLOBALES
+========================= */
+:root {
+  --border-radius: 18px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.15);
+  --transition: all 0.2s ease;
+}
+
+/* =========================
+   BODY ET SECTIONS
+========================= */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg-body);
+  color: var(--text-main);
+  padding-bottom: 90px;
+}
+
+section {
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   CARTES
+========================= */
+.carte, .carte-routine, .carte-journal, .carte-stats {
+  background: var(--bg-card);
+  color: var(--text-card);
+  border-radius: var(--border-radius);
+  padding: 1em;
+  margin: 0.8em auto;
+  width: 90%;
+  max-width: 230px;
+  box-shadow: var(--shadow);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Titres dans les cartes */
+.carte h3, .carte h4 {
+  color: var(--text-header); /* toujours en accord avec thème */
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+/* =========================
+   BOUTONS
+========================= */
+button {
+  width: 100%;
+  padding: 0.7em;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.3s, color 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* =========================
+   FORMULAIRES / TEXTAREA
+========================= */
+input[type="text"], input[type="time"], select, textarea {
+  width: 100%;
+  padding: 0.6em;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  font-family: inherit;
+  font-size: 0.95em;
+  color: var(--text-main);
+  background: var(--bg-card);
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+textarea { resize: vertical; }
+
+/* =========================
+   LABELS SOINS / CHECKBOX
+========================= */
+label.soin {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.3em 0;
+  font-size: 0.95em;
+  line-height: 1.3;
+}
+
+label.soin input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  flex-shrink: 0;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+label.soin span {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ===============================
+   JOURS D’HYDRATATION – ROUTINE
+================================ */
+
+/* Container des jours */
+.jours-hydratation {
+  display: flex;
+  gap: 0.5em;
+  overflow-x: auto;        /* scroll horizontal si nécessaire */
+  padding: 0.3em 0;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Scrollbar personnalisée pour desktop */
+.jours-hydratation::-webkit-scrollbar {
+  height: 6px;
+}
+.jours-hydratation::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 3px;
+}
+.jours-hydratation::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+/* Boutons jours (par défaut) */
+.jour-btn {
+  flex: 1 0 auto;            /* largeur automatique, s'adapte au contenu */
+  padding: 0.5em 0.7em;
+  border-radius: 10px;
+  border: 1px solid var(--accent-soft);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 40px;
+  white-space: nowrap;
+}
+
+/* Jour actif */
+.jour-btn.actif {
+  background: var(--accent);      /* couleur principale du thème */
+  color: var(--btn-text);         /* texte clair pour contraste */
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  transform: scale(1.05);
+  font-weight: 700;
+}
+
+/* Jour complété */
+.jour-btn.complet {
+  background: var(--accent-soft); /* couleur douce du thème */
+  color: var(--text-main);
+  border: 1px solid var(--accent-soft);
+}
+
+/* Hover pour tous les boutons */
+.jour-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+/* Responsive : réduire l’espace sur mobile */
+@media (max-width: 480px) {
+  .jours-hydratation {
+    gap: 0.3em;
+  }
+  .jour-btn {
+    padding: 0.4em 0.6em;
+    font-size: 0.85em;
+  }
+}
